@@ -17,11 +17,10 @@ namespace ResourceManager.Rules {
 		}
 
 		public void Apply() {
-			if (!_resourceRepository.Load("Health").IsLessThanOrEqualTo(Value.Zero())) {
-				return;
+			if (_resourceRepository.Load("Health").IsLessThanOrEqualTo(Value.Zero())) {
+				_inputOutputController.Write("You have died.");
+				_resourceManagerController.EndScenario();
 			}
-			_inputOutputController.Write("You have died.");
-			_resourceManagerController.EndScenario();
 		}
 	}
 }
