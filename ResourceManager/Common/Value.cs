@@ -38,11 +38,11 @@ namespace ResourceManager.Common {
 		}
 
 		public static Value operator +(Value left, IDouble right) {
-			return new Value(left._ + right._);
+			return Value.From(left._ + right._);
 		}
 
 		public static Value operator -(Value left, IDouble right) {
-			return new Value(left._ - right._);
+			return Value.From(left._ - right._);
 		}
 
 		public static bool operator <(Value left, IDouble right) {
@@ -62,7 +62,7 @@ namespace ResourceManager.Common {
 		}
 
 		public static Value Zero() {
-			return new Value(0D);
+			return Value.From(0D);
 		}
 	}
 }
