@@ -6,11 +6,11 @@ using ResourceManager.Rules;
 namespace ResourceManager {
 	public static class Program {
 		public static void Main(string[] args) {
-			InputOutputController inputOutputController = new InputOutputController();
-			ResourceRepository resourceRepository = new ResourceRepository();
-			RuleManager ruleManager = new RuleManager();
-			ActionCatalog actionCatalog = new ActionCatalog(new NothingAction(inputOutputController));
-			ResourceManagerController resourceManagerController = new ResourceManagerController(
+			IInputOutputController inputOutputController = new InputOutputController();
+			IResourceRepository resourceRepository = new ResourceRepository();
+			IRuleManager ruleManager = new RuleManager();
+			IActionCatalog actionCatalog = new ActionCatalog(new NothingAction(inputOutputController));
+			IResourceManagerController resourceManagerController = new ResourceManagerController(
 				resourceRepository,
 				ruleManager,
 				actionCatalog,
